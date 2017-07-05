@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    embed { position:fixed; width: 100%; height:100%; top:0; bottom:0; left:0; right:0; z-index:999; }
+    .backdrop {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0) transparent;
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.93);
+  }
+  </style>
+
+  <script src="js/jquery.min.js"></script>
+  <!-- <script src="js/svg.min.js"></script>	-->
+  <!-- <script src="js/svg.import.min.js"></script> -->
+  <!-- <script src="js/intro.svg.js"></script> -->
+  <script>
+
+  // wait until all the resources are loaded
+  window.addEventListener("load", bindEventsToSVG, false);
+
+  var _button;
+
+  // Fetches the document for the given embedding_element
+  function getSubDocument(embeddedElement)
+  {
+    if (embeddedElement.contentDocument)
+    {
+      return embeddedElement.contentDocument;
+    }
+    else
+    {
+      var subDocument = null;
+      try
+      {
+        subDocument = embeddedElement.getSVGDocument();
+      }
+      catch(e)
+      {
+        //console.log('Problem finding svg document.');
+      }
+
+      return subDocument;
+    }
+  }
+
+  function bindEventsToSVG()
+  {
+    console.log('hiiii');
+    var svgElement = document.querySelector(".svgEmbed");
+    var subDocument = getSubDocument(svgElement);
+    if (subDocument)
+    {
+      _button = $(subDocument.getElementById("Button"));
+      _button.click(dismissIntro);
+      _button.hover(buttonHover);
+    }
+    else
+    {
+
+    }
+  }
+
+  function buttonHover(event)
+  {
+    //console.log('button hover');
+  }
+
+  function showIntro(event)
+  {
+    $('.introduction').show()
+    bindEventsToSVG();
+  }
+
+  function dismissIntro()
+  {
+    $('.introduction').hide()
+  }
+
+  </script>
+
+</head>
+
+<embed class="introduction backdrop svgEmbed" src="/img/Introduction.svg" type="image/svg+xml" />
+
+<html>

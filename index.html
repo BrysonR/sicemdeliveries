@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sic Em Delivery</title>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+     <meta name="mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" /> 
+     <link rel="apple-touch-icon" sizes="76x76" href="img/touch-icon-ipad.png" /> 
+	 <link rel="apple-touch-icon" sizes="120x120" href="img/touch-icon-iphone-retina.png" />
+	 <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-ipad-retina.png" />
+	         <!-- iOS 6 & 7 iPad (retina, portrait) -->
+        <link href="img/apple-touch-startup-image-1536x2008.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+ 
+        <!-- iOS 6 iPad (portrait) -->
+        <link href="img/apple-touch-startup-image-768x1004.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+ 
+        <!-- iOS 6 & 7 iPhone 5 -->
+        <link href="img/apple-touch-startup-image-640x1096.png"
+              media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+ 
+        <!-- iOS 6 & 7 iPhone (retina) -->
+        <link href="img/apple-touch-startup-image-640x920.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+ 
+        <!-- iOS 6 iPhone -->
+        <link href="img/apple-touch-startup-image-320x460.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+
+     <!-- Styles -->
+
+    <link rel="shortcut icon" type="image/png" href="img/SicEmDeliveryFavIcon.png" />
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/shopfrog.css" rel="stylesheet" media="screen">  
+	<link href="css/color-theme.css" rel="stylesheet" media="screen">	
+	<!--<link href="css/add2home.css" rel="stylesheet">-->
+	<link href="css/style.css" rel="stylesheet">
+	
+	<!-- /Styles -->
+
+
+	<!-- Fonts -->
+
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+	<!-- /Fonts -->
+	
+	<!-- Scripts -->
+	
+	<script src="js/respond.min.js"></script>
+	<script src="js/jquery.min.js"></script>	
+	<script src="js/knockout.js"></script>
+	<script src="js/knockout.validation.min.js"></script>   
+	<script src="js/modernizr.min.js"></script>	
+	<script src="js/imagesloaded.min.js"></script>	
+	<script src="js/jquery.masonry.min.js"></script>	
+	<script src="js/bootstrap.js"></script>
+	<!--<script src="js/add2home.js"></script>-->
+	<script src="js/shopfrog.js"></script>
+	<script src="js/flurry.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/intro.js"></script>
+
+	<!-- /Scripts -->
+
+</head>
+<body class="order-page">
+		
+	<embed class="introduction intro-backdrop svgEmbed" src="/img/Introduction.svg" type="image/svg+xml" />
+	
+	<script type="text/javascript">
+		if(localStorage.getItem('firstTimeVisitor') == null)
+      {
+		$('.introduction').css('visibility','visible');
+      }else {
+	      $('.introduction').hide();
+      }
+    </script>
+	
+	<header class="navbar navbar-fixed-top clearfix">
+		
+		<a class="brand" href="index.html">Sic Em Delivery</a>
+	
+		<div id="nav-number" class="phone-number">
+			<a href="tel:+12543077756" id="phone"><h3>254-307-7756</h3></a>
+		</div>
+		
+		<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	
+		<nav class="navbar-collapse collapse" id="main-nav">
+			<ul class="nav">
+				<li class='active'>
+					<a href="#" class="top-level flat">Home</a>
+				</li>
+				<li class='current'>
+					<a href="contact.html" class="current top-level flat">Contact Us</a>
+				</li>
+				<li class="current show-call">
+					<a href="tel:+12543077756" id="phone">Call Us!</a>							
+				</li>
+			</ul>
+		</nav><!--/.nav-collapse -->
+	</header>
+	
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<a href="index.html">Home</a> > Swimwear
+			</div>
+		 </div>
+	</div><!-- //end container -->
+	
+	<div id="product-board" data-bind="foreach: venue" data-intro="Please select a venue that you'd like delivered">
+			<!-- ko if: type == "information" -->
+			<div class="product information large static">
+				<div class="text">
+					<h1 data-bind="text: header"></h1>
+					<p class="lead" data-bind="text: detailsLine1"></p>
+					<p class="lead" data-bind="text: detailsLine2"></p>	
+				</div>
+			</div>
+			<!-- /ko -->
+			<!-- ko if: type == "filter" -->
+			<div class="product filter large static">
+				<div class="text">
+					<p class="filter">Filter:</p>		
+					<ul class="board-filters clearfix">
+						<li><a href="#" class="filter-hidden" data-filter="all">All</a></li>					
+						<li><a href="#" data-filter="food">Food</a></li>
+						<li><a href="#" data-filter="gas-station">Gas Stations</a></li>
+						<li><a href="#" data-filter="store">Stores</a></li>				
+					</ul>
+				</div>
+			</div>
+			<!-- /ko -->
+			<!-- ko if: type == "food" -->
+			<div class="product food medium">
+				<div class="media">
+					<a class="modal-init" href="#" data-toggle="modal" data-target="#myModal" data-bind="click: $parent.newOrder">
+						<img class="img-responsive" data-bind="attr: {src: logoPath}, value: label"/>
+					</a>			
+				</div>
+				<div class="details">
+					<a href="#" data-bind="click: $parent.newOrder" class="modal-init" data-toggle="modal" data-target="#myModal"><p class="name" data-bind="text: label, value: label"></p></a>
+				</div>
+			</div>
+			<!-- /ko -->	
+			<!-- ko if: type == "gas station" -->
+			<div class="product gas-station medium">
+				<div class="media">
+					<a class="modal-init" href="#" data-toggle="modal" data-target="#myModal" data-bind="click: $parent.newOrder">
+						<img class="img-responsive" data-bind="attr: {src: logoPath}, value: label"/>
+					</a>			
+				</div>
+				<div class="details">
+					<a href="#" data-bind="click: $parent.newOrder" class="modal-init" data-toggle="modal" data-target="#myModal"><p class="name" data-bind="text: label, value: label"></p></a>
+				</div>
+			</div>
+			<!-- /ko -->
+			<!-- ko if: type == "store" -->
+			<div class="product store medium">
+				<div class="media">
+					<a class="modal-init" href="#" data-toggle="modal" data-target="#myModal" data-bind="click: $parent.newOrder">
+						<img class="img-responsive" data-bind="attr: {src: logoPath}, value: label"/>
+					</a>			
+				</div>
+				<div class="details">
+					<a href="#" data-bind="click: $parent.newOrder" class="modal-init" data-toggle="modal" data-target="#myModal"><p class="name" data-bind="text: label, value: label"></p></a>
+				</div>
+			</div>
+			<!-- /ko -->			
+	</div> <!-- //end product-board -->
+	
+	<!-- Order Form Modal -->
+	
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-bind="with: order" >
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+			<!-- carousel inner -->
+			<div class="carousel-inner">
+		    	
+		    	<div class="item active">
+			      	<div class="modal-dialog">
+			   	 		<div class="modal-content">
+			   	 			<form class="order-form">
+					   	 		<div class="modal-header">
+						   	 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						   	 		<h4 class="modal-title" id="myModalLabel">Pricing</h4>
+						   	 	</div>
+						   	 	<div class="modal-body" style="padding: 10px;">
+							   	 	<table class="table">
+								   	 	<thead>
+								   	 		<tr>
+								   	 			<th style="border-top-left-radius: 6px;">Order Total</th>
+								   	 			<th style="border-top-right-radius: 6px;">Delivery Fee</th>
+								   	 		</tr>
+								   	 	</thead>
+								   	 	<tbody>
+								   	 		<tr>
+								   	 			<td>$1-25</td>
+								   	 			<td>$5</td>
+								   	 		</tr>
+								   	 		<tr>
+								   	 			<td>$26-50</td>
+								   	 			<td>$7</td>
+								   	 		</tr>
+								   	 		<tr>
+								   	 			<td>$51-99</td>
+								   	 			<td>$9</td>
+								   	 		</tr>
+								   	 		<tr>
+								   	 			<td>$100+</td>
+								   	 			<td>12% of Total</td>
+								   	 		</tr>
+								   	 	</tbody>
+							   	 	</table>
+								</div>
+								<div class="modal-footer">
+						        </div>
+						    </form>
+					    </div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+		    	</div>
+		    	
+		    	<div class="item">
+			      	<div class="modal-dialog">
+			   	 		<div class="modal-content">
+			   	 			<form class="order-form">
+					   	 		<div class="modal-header">
+						   	 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						   	 		<h4 class="modal-title" id="myModalLabel" data-bind="text: orderVenueTitle"></h4>
+						   	 	</div>
+						   	 	<div class="modal-body">
+						   	 		<label for="order-details">Details</label>
+							   	 	<div class="form-group">
+								   	 	<textarea id="order-details" data-bind="value: orderDetails, text: orderDetails" placeholder="Please tell us what you'd like"></textarea>
+								   	</div>
+								</div>
+								<div class="modal-footer">
+						        </div>
+						    </form>
+					    </div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+		    	</div>
+		    	
+		    	<div class="item">
+			    	<div class="modal-dialog">
+				    	<div class="modal-content">
+						    <form class="order-form">
+						    	<div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						        	<h4 class="modal-title" id="myModalLabel">Please enter your info</h4>
+						        </div>
+						        <div class="modal-body">
+						        	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							        	<div class="form-group">
+										    <label for="name">Name</label>
+										    <input type="text" class="form-control" id="name" data-bind="value: name" required>
+										</div>
+										<div class="form-group" style="padding-top: 15px;">
+										    <label for="phone">Phone</label>
+										    <input type="text" class="form-control" id="phone" data-bind="value: phone" required>
+										</div>
+									</div>
+								</div>
+						      	<div class="modal-footer">
+						        </div>
+						    </form>
+					    </div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+	            </div>
+		  
+		    	<div class="item">
+			    	<div class="modal-dialog">
+				    	<div class="modal-content">
+				    		<form class="order-form">
+						    	<div class="modal-header">
+							    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							    	<h4 class="modal-title" id="myModalLabel">Please enter your address</h4>
+							    </div>
+							    <div class="modal-body">
+								    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									    <div class="form-group">
+										    <label for="streetAddress">Street Address</label>
+										    <input type="text" class="form-control" id="streetAddress" data-bind="value: streetAddress" required>
+										</div>
+										<div class="form-group" style="padding-top: 15px;">
+									    	<label for="unit">Apt. or Building #</label>
+									    	<input type="text" class="form-control" id="unit" data-bind="value: buildingNumber" required>
+									    </div>
+									
+									</div>
+								</div>
+								<div class="modal-footer">
+								</div>
+							</form>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+	            </div>
+		    
+		    	<div class="item">
+			    	<div class="modal-dialog">
+				    	<div class="modal-content">
+							<form class="order-form">
+						    	<div class="modal-header">
+							    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							    	<h4 class="modal-title" id="myModalLabel">You're order is on its way</h4>
+							    </div>
+							    <div class="modal-body">
+						      		<h1 class="text-center">Thanks!</h1>
+						      	</div>
+						      	<div class="modal-footer">
+							    </div>
+							</form>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div>
+			</div>		   
+			<!-- Carousel-Controls -->
+			<div id="carousel-controls" style="z-index: 2000;">
+				<!-- ko if: $parent.currentStep() == 1 || $parent.currentStep() == 2 -->
+				<a class="right control btn btn-default" data-bind="click: $parent.validateStep">
+					Next
+				</a>
+				<!-- /ko -->
+				
+				<!-- ko if: $parent.currentStep() == 3 -->
+				<a class="left control btn btn-default" data-bind="click: $parent.saveOrder">
+					Order
+				</a>
+				<!-- /ko -->
+				
+				<!-- ko if: $parent.currentStep() == 2 || $parent.currentStep() == 3 -->
+				<a class="left control btn btn-default" data-bind="click: $parent.previousStep">
+					Back
+				</a>
+				<!-- /ko -->
+				
+				<!-- ko if: $parent.currentStep() == 0 -->
+				<a class="left control btn btn-default" data-bind="click: $parent.nextStep">
+					Continue
+				</a>
+				<!-- /ko -->
+				
+				<!-- ko if: $parent.currentStep() == 0 -->
+				<a class="left control btn btn-default" data-dismiss="modal">
+					Cancel
+				</a>
+				<!-- /ko -->
+				
+				<!-- ko if: $parent.currentStep() == 4 || $parent.currentStep() == 1 -->
+				<a class="left control btn btn-default" data-dismiss="modal">
+					Close
+				</a>
+				<!-- /ko -->
+				
+			</div>
+			<!-- /Carousel-Controls -->
+			
+			<!-- Progress Bar -->
+			<!-- ko if: $parent.currentStep() != 4 -->
+			<div class="progress">
+			    <div class="progress-bar" style="width: 25%;"></div>
+			</div>
+			<!-- /ko -->
+			
+			<!-- ko if: $parent.currentStep() == 4 -->
+			<div class="progress">
+			    <div class="progress-bar" style="width: 25%;">Success</div>
+			</div>
+			<!-- /ko -->
+			<!-- /Progress Bar -->  
+		</div>
+	</div>
+	
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-md-10 col-lg-11">
+				<p>&copy; 2013 Campus Deliveries</p>
+				<!-- <p><a href="#">terms</a> / <a href="#">privacy</a> / <a href="#">returns</a> / <a href="#">delivery</a></p> -->
+			</div>
+			<div id="social-icons"class="col-sm-12 col-md-2 col-lg-1">
+				<p>
+					<a id="facebook" class="social-icon">
+						<img src="img/facebookShare.png">
+					</a>
+					<a id="twitter" class="social-icon">
+						<img src="img/twitterShare.png">
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	</footer>
+	
+	<script>
+		ko.applyBindings(mvm);
+	</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46107969-1', 'sicemdelivery.com');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+</html>

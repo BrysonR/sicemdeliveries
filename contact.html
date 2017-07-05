@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sic Em Delivery</title>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+     <meta name="mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" /> 
+     <link rel="apple-touch-icon" sizes="76x76" href="img/touch-icon-ipad.png" /> 
+	 <link rel="apple-touch-icon" sizes="120x120" href="img/touch-icon-iphone-retina.png" />
+	 <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-ipad-retina.png" />
+
+     <!-- Styles -->
+
+    <link rel="shortcut icon" type="image/png" href="img/SicEmDeliveryFavIcon.png" />
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/shopfrog.css" rel="stylesheet" media="screen">  
+	<link href="css/color-theme.css" rel="stylesheet" media="screen">	
+	<link href="css/style.css" rel="stylesheet">
+	
+	<!-- /Styles -->
+
+	<!-- Fonts -->
+
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+	<!-- /Fonts -->
+	
+	<!-- Scripts -->
+	
+	<script src="js/respond.min.js"></script>
+	<script src="js/jquery.min.js"></script>	
+	<script src="js/knockout.js"></script>
+	<script src="js/knockout.validation.min.js"></script>   
+	<script src="js/modernizr.min.js"></script>	
+	<script src="js/imagesloaded.min.js"></script>	
+	<script src="js/jquery.masonry.min.js"></script>	
+	<script src="js/bootstrap.js"></script>
+	<script src="js/shopfrog.js"></script>
+	<script src="js/flurry.js"></script>
+	<script src="js/contact.js"></script>
+
+	<!-- /Scripts -->
+
+</head>
+<body>
+	<body class="page-general">
+			
+	<header class="navbar navbar-fixed-top clearfix">
+		
+		<a class="brand" href="index.html">Sic Em Delivery</a>
+	
+		<div id="nav-number" class="phone-number">
+			<a href="tel:+12543077756" id="phone"><h3>254-307-7756</h3></a>
+		</div>
+		
+		<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	
+		<nav class="navbar-collapse collapse" id="main-nav">
+			<ul class="nav">
+				<li class='current'>
+					<a href="index.html" class="current top-level flat">Home</a>
+				</li>
+				<li class='active'>
+					<a href="#" class="top-level flat">Contact Us</a>
+				</li>
+				<li class="current show-call">
+					<a href="tel:+12543077756" id="phone">Call Us!</a>							
+				</li>								
+			</ul>
+		</nav><!--/.nav-collapse -->
+	</header>
+
+	
+	<div class="container main-content">
+		
+		<div class="row" data-bind="with: contactData">
+			<div class="col-xs-12">
+				<div class="content clearfix">
+					<h1>Contact</h1>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="content inner">
+							<p class="lead">If you need help with anything or have questions about one of our products use the form below to contact us.</p>
+						</div>	<!-- //end content -->
+					</div> <!-- //end span4 -->
+					<div class="col-sm-8 col-md-6 col-lg-5">
+						<div class="content inner">
+							<form id ="contact-form" data-bind="submit: $parent.submit">
+								<div class="form-group">		
+									<label class="control-label" for="author">Name</label>							
+									<input id="author" type="text" value="" size="30" class="form-control" data-bind="value: contactName">
+								</div>
+								<div class="form-group">		
+									<label class="control-label" for="email">Email</label>
+									<input id="email" type="text" value="" size="30" class="form-control" data-bind="value: contactEmail">
+								</div>
+								<div class="form-group">		
+									<label class="control-label" for="message">Message </label>
+									<textarea id="message" cols="45" rows="8" class="form-control" data-bind="value: contactMessage"></textarea>
+								</div>
+								<div class="form-group">		
+									<input name="submit" type="submit" id="submit" value="Send message" class="btn send-message btn-large modal-init">
+								</div>
+							</form>
+						</div> <!-- //end content -->
+					</div> <!-- //end span8 -->
+				</div>
+			</div> <!-- //end span12 -->
+		</div> <!-- //end row -->			
+	</div> <!-- //end container -->
+	
+	<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="container main-content" style="margin-top: 10%">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="content clearfix text-center">
+						<h3>Thanks So Much</h3></br><h5>for contacting us. We will get back with you as quickly as possible.</h5>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="content clearfix text-center">
+						<a href="#" data-bind="click: closeContactSuccessModal" class="btn btn-lg">Close</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3 col-lg-3">
+				<p>&copy; 2013 Campus Deliveries</p>
+				<!-- <p><a href="#">terms</a> / <a href="#">privacy</a> / <a href="#">returns</a> / <a href="#">delivery</a></p> -->
+			</div>
+			<div id="social-icons"class="col-sm-12 col-md-2 col-lg-1">
+				<p>
+					<a id="facebook" class="social-icon">
+						<img src="img/facebookShare.png">
+					</a>
+					<a id="twitter" class="social-icon">
+						<img src="img/twitterShare.png">
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	</footer>
+	
+	<script>
+		ko.applyBindings(cvm);
+	</script>
+
+</body>
+</html>

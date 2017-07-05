@@ -1,0 +1,124 @@
+.show-call {
+	display: none !important;
+}
+
+
+/* Desktop */
+
+@media only screen 
+and (min-width : 1025px) { 
+
+}
+
+/* iPad Portrait/Landscape */
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)  { 
+	
+}
+
+/* iPhone 5+ Portrait/Landscape */
+
+@media (max-width : 767px) { 
+	/* Removing nav-basket from header */
+	#nav-number {
+		display: none !important;
+	}
+	.show-call {
+		display: block !important;
+	}
+	
+	/* Prevent Mobile Background Scrolling */
+	/*.modal-open {
+	  overflow: auto;
+	  position: fixed;
+	}*/
+	#myModal.modal.fade.in {
+		margin-top: 0 !important;
+	}
+	
+}
+
+/* setting the height of all the form slides for uniformity */
+
+.active .modal-dialog .modal-content {
+	height: 333px !important;
+}
+
+.active .modal-dialog .modal-content .modal-body {
+	height: 204px !important;
+}
+
+textarea {
+	height: 127px;
+}
+
+.modal-body .text-center {
+	padding: 45px 0;
+}
+
+.control {
+	float: right;
+	margin-right: 20px;
+}
+
+.order-form {
+	height: 333px;
+}
+
+.validationMessage {
+	width: 100%;
+	color: #b94a48;
+}
+
+.validationElement {
+	border-color: #b94a48;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+ 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+
+#social-icons {
+	opacity: 0.5;
+}
+
+.social-icon {
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+embed {
+	position:fixed; 
+	width: 100%;
+	height: 100%;
+	top:0; 
+	bottom:0; 
+	left:0; 
+	right:0; 
+	z-index:1031;
+	visibility: hidden;
+}
+
+.intro-backdrop {
+	/* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(0, 0, 0) transparent;
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.93);
+}
+
+.order-form .modal-body table thead th {
+	font-size: 20px;
+}
+
+.order-form .modal-body table thead {
+	background-color: rgba(0,103,0,0.41);
+}
+
+.board-filters {
+	margin-top: 10px;
+}
+
+.information .text h1 {
+	padding-bottom: 10px;
+}
